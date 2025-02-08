@@ -6,4 +6,4 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;  // これがESモジュール形式
+module.exports = nextConfig;

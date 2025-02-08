@@ -6,6 +6,7 @@ image: aboutcorrectionsbyai.png
 categories: ['react']
 ---
 ## 目次
+
 Laravel のデフォルトのフロントエンドアセットバンドラーが Vite に変更になったので動作確認を行います。
 
 
@@ -16,6 +17,8 @@ Laravel のデフォルトのフロントエンドアセットバンドラーが
 ## その他
 
 Vite の動作確認を行うため Laravel プロジェクトの作成後に Breeze パッケージのインストールを行います。
+
+[hello]
 
 [記事一覧](/)
 

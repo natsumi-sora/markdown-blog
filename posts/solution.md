@@ -6,6 +6,7 @@ image: solution.png
 categories: ['react']
 ---
 ## 目次
+
 Laravel のデフォルトのフロントエンドアセットバンドラーが Vite に変更になったので動作確認を行います。
 
 

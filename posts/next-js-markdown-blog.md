@@ -17,13 +17,14 @@ Next.js を使って Markdown のブログサイトの構築を一から行な�
 
 ## ブログの構築
 ### レイアウトの設定
+
 npx create-next-app コマンドを利用して Next.js プロジェクトの作成を行います。
 
 [記事一覧](/)
 
 ![Next.jsのWelcomeページ](http://localhost:3000/welcomeblog.png)
 
-```js[class="line-numbers"]
+```js[className="line-numbers"]
 import Layout from '../components/layout';
 import '../styles/globals.css';
 import '../styles/prism.css';
