@@ -1,7 +1,7 @@
 ---
 title: 'Create table of contents-Blog　目次作成'
 date: '2022-07-14'
-description: 'Create table of contents-Blog　目次作成　今回のブログについては参考先のJavaScriptファイルを参考にして作成していましたが、途中からTypeScriptに変更しています。その過程でCSSがなぜかトップページ以外のページネーション先に反映されなかったり、目次がサイドバーに行かなかったりとトラブルが発生しました。オンライン勉強会やchatGTPを使用してもなかなか解決せず現状の状態となります。何か良い解決方法があればご教示いただきたいです。よろしくお願いいたします。'
+description: '目次作成　　今回のブログについては参考先のJavaScriptファイルを参考にして作成していましたが、途中からTypeScriptに変更しています。その過程で目次がサイドバーに行かなかったりとトラブルが発生しました。オンライン勉強会やchatGTPを使用してもなかなか解決せず現状の状態となります。何か良い解決方法があればご教示いただきたいです。また、コンポーネントについても現在の分け方で問題ないか参考までに教えていただけますと幸いです。よろしくお願いいたします。※ページネーションボタンの部分だけMUI CSSを使用しています。※今回の画像は自身で作成したものです。フォントはAdobeフォントOmnesを使用しています。'
 image: createtableofcontents.png
 categories: ['react']
 tags: ["Next.js", "Markdown", "Tailwind CSS"]

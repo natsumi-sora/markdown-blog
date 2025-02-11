@@ -8,6 +8,7 @@ const Header = () => {
           MyBlog
         </Link>
         <div>Link</div>
+        
       </div>
     </header>
   );

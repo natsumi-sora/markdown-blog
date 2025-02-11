@@ -3,7 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import { GetStaticProps, GetStaticPaths, NextPage } from 'next';
 import PostCard from 'components/PostCard';
-
+import Button from '@mui/material/Button'; // MUIのButtonをインポート
 
 interface FrontMatter {
   title: string;
@@ -81,7 +81,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths,
-    fallback: false, // 存在しないページにアクセスすると 404 ページが表示されます
+    fallback: false, // 存在しないページにアクセスすると 404 ページが表示
   };
 };
 
@@ -97,18 +97,26 @@ const Page: NextPage<PageProps> = ({ posts, pages, current_page }) => {
       </div>
 
       {/* ページネーションコンポーネント */}
-      <div className="my-4">
-        <div className="flex justify-center space-x-4">
-          {pages.map((page) => (
-            <a
-              key={page}
-              href={`/page/${page}`}
-              className={`px-4 py-2 rounded ${current_page === page ? 'bg-blue-500 text-white' : 'bg-gray-300'}`}
-            >
-              {page}
-            </a>
+      <div className="my-4 flex justify-center space-x-2">
+        {pages.map((page) => (
+          <Button
+            key={page}
+            href={`/page/${page}`}
+            variant={current_page === page ? 'contained' : 'outlined'}
+            sx={{
+              backgroundColor: current_page === page ? '#f06292' : 'transparent',
+              color: current_page === page ? 'white' : '#f06292',
+              borderColor: '#f06292',
+              '&:hover': {
+                backgroundColor: '#e91e63',
+                borderColor: '#e91e63',
+                color: 'white',
+              },
+            }}
+          >
+            {page}
+          </Button>
           ))}
-        </div>
       </div>
     </div>
   );

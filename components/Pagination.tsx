@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Button from '@mui/material/Button'; // MUIのButtonをインポート
 
 interface PaginationProps {
   pages: number[];
@@ -8,14 +9,24 @@ interface PaginationProps {
 const Pagination = ({ pages, current_page = 1 }: PaginationProps) => {
   console.log("current_page:", current_page);
   return (
-    <div className="flex items-center space-x-1 mt-8">
+    <div className="flex justify-center mt-10 space-x-4">
       {pages.map((page) => (
-        <Link href={`/page/${page}`} key={page}
-          className={`px-4 py-2 border cursor-pointer transition ${
-          current_page === page ? 'bg-black text-white cursor-not-allowed' : 'hover:bg-gray-200'
-          }`}
-          aria-current={current_page === page ? 'page' : undefined}>
-          {page}
+        <Link href={`/page/${page}`} key={page} passHref>
+          <Button
+            variant={current_page === page ? 'contained' : 'outlined'}
+            sx={{
+              backgroundColor: current_page === page ? '#f06292' : 'transparent',
+              color: current_page === page ? 'white' : '#f06292',
+              borderColor: '#f06292',
+              '&:hover': {
+                backgroundColor: '#e91e63',
+                borderColor: '#e91e63',
+                color: 'white',
+              },
+            }}
+          >
+            {page}
+          </Button>
         </Link>
       ))}
     </div>

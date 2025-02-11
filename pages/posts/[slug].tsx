@@ -247,7 +247,7 @@ const Post: NextPage<PostProps> = ({ frontMatter, content, slug, toc, relatedPos
 
           {/* サイドバー */}
           <aside className="col-span-12 lg:col-span-3">
-　          <Sidebar toc={toReactNode(toc)} relatedPosts={relatedPosts} />
+          <Sidebar toc={toReactNode(toc)} relatedPosts={relatedPosts} />
           </aside>
         </div>
         
