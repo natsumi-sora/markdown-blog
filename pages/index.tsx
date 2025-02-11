@@ -31,7 +31,9 @@ const range = (start: number, end: number, length: number = end - start + 1): nu
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   const postsDirectory = path.join(process.cwd(), 'posts');
-  const files = fs.readdirSync(postsDirectory);
+  const files = fs.readdirSync(postsDirectory)
+   .filter((file) => file.endsWith('.md')); // Markdownファイルのみ取得
+
   const posts: Post[] = files.map((fileName) => {
     const slug = fileName.replace(/\.md$/, '');
     const fileContent = fs.readFileSync(path.join(postsDirectory, fileName), 'utf-8');

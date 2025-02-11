@@ -4,6 +4,7 @@ import '../styles/globals.css';
 import { DefaultSeo } from 'next-seo';
 import SEO from '../next-seo.config';
 import 'prismjs/themes/prism-okaidia.css';
+import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 import '../public/tailwind.css';  // tailwind.css は最後にインポート
 
 

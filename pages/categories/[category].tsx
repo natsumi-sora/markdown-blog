@@ -2,17 +2,21 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { GetStaticProps, GetStaticPaths, NextPage } from 'next';
+import { ParsedUrlQuery } from 'querystring';
+import PostCard from '../../components/PostCard';
 
-interface FrontMatter {
-  title: string;
-  description: string;
-  date: string;
-  categories: string[];
-  image: string;
+interface Params extends ParsedUrlQuery {
+  category: string;
 }
 
 interface Post {
-  frontMatter: FrontMatter;
+  frontMatter: {
+    title: string;
+    description: string;
+    date: string;
+    image: string;
+    categories: string[];
+  };
   slug: string;
 }
 
@@ -20,24 +24,28 @@ interface CategoryProps {
   posts: Post[];
 }
 
-export const getStaticProps: GetStaticProps<CategoryProps> = async ({ params }) => {
-  const category = params?.category as string;
-  const postsDirectory = path.join(process.cwd(), 'posts');
-  const files = fs.readdirSync(postsDirectory);
+export const getStaticProps: GetStaticProps<CategoryProps, Params> = async ({ params }) => {
+  if (!params) {
+    return { notFound: true };
+  }
 
-  const posts = files.map((fileName) => {
+  const postsDirectory = path.join(process.cwd(), 'posts');
+  const files = fs.readdirSync(postsDirectory)
+    .filter((file) => file.endsWith('.md')); // Markdownファイルのみ取得
+
+  const posts: Post[] = files.map((fileName) => {
     const slug = fileName.replace(/\.md$/, '');
-    const fileContent = fs.readFileSync(path.join(postsDirectory, fileName), 'utf-8');
+    const fileContent = fs.readFileSync(path.join(process.cwd(), 'posts', fileName), 'utf-8');
     const { data } = matter(fileContent);
     return {
-      frontMatter: data as FrontMatter,
+      frontMatter: data as Post['frontMatter'],
       slug,
     };
   });
 
-  const filteredPosts = posts.filter((post) =>
-    post.frontMatter.categories.includes(category)
-  );
+  const category = params.category;
+
+  const filteredPosts = posts.filter((post) => post.frontMatter.categories.includes(category));
 
   const sortedPosts = filteredPosts.sort((postA, postB) =>
     new Date(postA.frontMatter.date) > new Date(postB.frontMatter.date) ? -1 : 1
@@ -51,20 +59,8 @@ export const getStaticProps: GetStaticProps<CategoryProps> = async ({ params }) 
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const postsDirectory = path.join(process.cwd(), 'posts');
-  const files = fs.readdirSync(postsDirectory);
-
-  const posts = files.map((fileName) => {
-    const fileContent = fs.readFileSync(path.join(postsDirectory, fileName), 'utf-8');
-    const { data } = matter(fileContent);
-    return data.categories;
-  });
-
-  const categories = Array.from(new Set(posts.flat()));
-
-  const paths = categories.map((category) => ({
-    params: { category },
-  }));
+  const categories = ['react', 'laravel'];
+  const paths = categories.map((category) => ({ params: { category } }));
 
   return {
     paths,
@@ -74,9 +70,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 const Category: NextPage<CategoryProps> = ({ posts }) => {
   return (
-    <div>
-      <h1>{posts[0]?.frontMatter?.categories[0]}</h1>
-      {/* カテゴリに紐づいた投稿を表示 */}
+    <div className="my-8">
+      <div className="grid grid-cols-3 gap-4">
+        {posts.map((post) => (
+          <PostCard key={post.slug} post={post} />
+        ))}
+      </div>
     </div>
   );
 };

@@ -1,9 +1,10 @@
 ---
 title: 'Create table of contents-Blog　目次作成'
 date: '2022-07-14'
-description: 'LaravelのデフォルトのフロントエンドアセットバンドラーはViteに変更したので動作確認をしています。'
+description: 'Create table of contents-Blog　目次作成　今回のブログについては参考先のJavaScriptファイルを参考にして作成していましたが、途中からTypeScriptに変更しています。その過程でCSSがなぜかトップページ以外のページネーション先に反映されなかったり、目次がサイドバーに行かなかったりとトラブルが発生しました。オンライン勉強会やchatGTPを使用してもなかなか解決せず現状の状態となります。何か良い解決方法があればご教示いただきたいです。よろしくお願いいたします。'
 image: createtableofcontents.png
 categories: ['react']
+tags: ["Next.js", "Markdown", "Tailwind CSS"]
 ---
 ## 目次
 

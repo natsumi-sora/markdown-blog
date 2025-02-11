@@ -1,36 +1,154 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div id="top"></div>
 
-## Getting Started
+## 使用技術一覧
 
-First, run the development server:
+<!-- シールド一覧 -->
+<p style="display: inline">
+  <!-- フロントエンドのフレームワーク一覧 -->
+  <img src="https://img.shields.io/badge/-Node.js-000000.svg?logo=node.js&style=for-the-badge">
+  <img src="https://img.shields.io/badge/-Next.js-000000.svg?logo=next.js&style=for-the-badge">
+  <img src="https://img.shields.io/badge/-TailwindCSS-000000.svg?logo=tailwindcss&style=for-the-badge">
+  <img src="https://img.shields.io/badge/-React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
+  
+ <!-- フロントエンド言語-->
+  <img src=<img alt="Static Badge" src="(https://img.shields.io/badge/-TypeScript-000000.svg?style=for-the-badge)>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+</p>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 目次
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1. [プロジェクトについて](#プロジェクトについて)
+2. [環境](#環境)
+3. [ディレクトリ構成](#ディレクトリ構成)
+4. [開発環境構築](#開発環境構築)
+5. [トラブルシューティング](#トラブルシューティング)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+## Markdownファイルを用いたブログ構築
 
-To learn more about Next.js, take a look at the following resources:
+参考サイトを元にマークダウンを使用したブログを構築する
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## プロジェクトについて
 
-## Deploy on Vercel
+・参考サイトを元にマークダウンを使用したブログを構築しています。
+・動作については開発環境のみで確認済みとなります。
+・画像、タイトル部分については自身で作成し直しています。
+　また、文章の一部等も変更しています。
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<!-- プロジェクトの概要を記載 -->
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+  <p align="left">
+    <br />
+    <!-- プロジェクト詳細にBacklogのWikiのリンク -->
+    <a href="Backlogのwikiリンク"><strong>プロジェクト詳細 »</strong></a>
+    <br />
+    <br />
+
+<p align="right">(<a href="#top">トップへ</a>)</p>
+
+## 環境
+
+<!-- 言語、フレームワーク、ミドルウェア、インフラの一覧とバージョンを記載 -->
+
+| 言語・フレームワーク・パッケージ | バージョン |
+| --------------------- | ---------- |
+　npm                   | 10.9.2
+| Node.js               | 22.13.0   |
+| React                 | 19.0.0    |
+| Next.js               | 15.1.6    |
+| Prettier              | 11.0.0    |
+| Tailwind CSS          | 0.14.3    |
+その他のパッケージのバージョンは package.json を参照してください
+
+<p align="right">(<a href="#top">トップへ</a>)</p>
+
+## ディレクトリ構成
+.
+├── README.md
+├── components
+│   ├── Footer.tsx
+│   ├── Header.tsx
+│   ├── Layout.tsx
+│   ├── Pagination.tsx
+│   ├── PostCard.tsx
+│   └── Sidebar.tsx
+├── eslint.config.ts
+├── jsconfig.json
+├── lib
+├── next-env.d.ts
+├── next-seo.config.tsx
+├── next.config.ts
+├── node_modules
+│   └── 省略   
+├── package-lock.json
+├── package.json
+├── pages
+│   ├── _app.tsx
+│   ├── api
+│   ├── categories
+│   ├── index.tsx
+│   ├── page
+│   └── posts
+├── postcss.config.tsx
+├── posts
+│   ├── about-corrections-by-aI.md
+│   ├── break-blog.md
+│   ├── create-table-of-contents.md
+│   ├── next-js-markdown-blog.md
+│   └── solution.md
+├── public
+│   ├── aboutcorrectionsbyai.png
+│   ├── breakblog.png
+│   ├── createtableofcontents.png
+│   ├── mdblog.png
+│   ├── solution.png
+│   ├── tailwind.css
+│   └── welcomeblog.png
+├── styles
+│   └── globals.css
+├── tailwind.config.ts
+├── tsconfig.json
+├── types
+│   ├── rehype-react.d.ts
+│   └── remark-prism.d.ts
+└── types.ts
+
+<p align="right">(<a href="#top">トップへ</a>)</p>
+
+
+### 実行までのコマンド
+
+・ VSCordのダウンロード
+　　https://code.visualstudio.com/download
+
+　・ダウンロードが完了したら拡張機能4つを追加
+　　```
+　　Japanese Language Pack for Visual Studio Code
+　　Live Server
+　　Prettier - Code formatter
+　　Tailwind CSS IntelliSense
+　　```
+
+・GitHubの以下よりリポジトリをクローン
+　https://github.com/natsumi-sora/markdown-blog.git
+
+・ターミナルで　npm run devを実行
+　http://localhost:3000/にアクセスする
+
+
+### 動作確認
+
+ターミナルで　npm run devを実行
+http://localhost:3000/
+にアクセスできたら成功
+
+記事は全部で5つあり、ページ1〜3までの記事のアクセス、
+[react]の先の記事も確認できたら成功
+
+### 停止
+
+以下のコマンドで開発環境サーバーを停止することができます
+^C （option+c）
+
+<p align="right">(<a href="#top">トップへ</a>)</p>

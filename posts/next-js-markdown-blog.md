@@ -1,9 +1,10 @@
 ---
 title: 'Next.jsでmarkdownブログを構築'
 date: '2022-07-13'
-description: 'Next.jsでmarkdownファイルを利用したブログの構築手順を解説しています。'
+description: 'Next.jsでmarkdownファイルを利用したブログの構築手順を解説しています。今回のブログについては参考先のJavaScriptファイルを参考にして作成していましたが、途中からTypeScriptに変更しています。その過程でCSSがなぜかトップページ以外のページネーション先に反映されなかったり、目次がサイドバーに行かなかったりとトラブルが発生しました。オンライン勉強会やchatGTPを使用してもなかなか解決せず現状の状態となります。何か良い解決方法があればご教示いただきたいです。よろしくお願いいたします。'
 image: mdblog.png
 categories: ['react']
+tags: ["Next.js", "Markdown", "Tailwind CSS"]
 ---
 ## 目次
 
@@ -24,7 +25,7 @@ npx create-next-app コマンドを利用して Next.js プロジェクトの作
 
 ![Next.jsのWelcomeページ](http://localhost:3000/welcomeblog.png)
 
-```js[className="line-numbers"]
+```js[class="line-numbers"]
 import Layout from '../components/layout';
 import '../styles/globals.css';
 import '../styles/prism.css';

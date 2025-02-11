@@ -2,6 +2,8 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { GetStaticProps, GetStaticPaths, NextPage } from 'next';
+import PostCard from 'components/PostCard';
+
 
 interface FrontMatter {
   title: string;
@@ -31,7 +33,10 @@ const range = (start: number, end: number, length = end - start + 1) =>
 export const getStaticProps: GetStaticProps<PageProps> = async ({ params }) => {
   const current_page = parseInt(params?.page as string, 10); // ページ番号を取得
   console.log(current_page)
-  const files = fs.readdirSync('posts'); // 'posts' ディレクトリ内のファイルを取得
+
+ const postsDirectory = path.join(process.cwd(), 'posts');
+  const files = fs.readdirSync(postsDirectory)
+    .filter((file) => file.endsWith('.md')); // Markdownファイルのみ取得
   const posts = files.map((fileName) => {
     const slug = fileName.replace(/\.md$/, '');
     const fileContent = fs.readFileSync(path.join('posts', fileName), 'utf-8');
@@ -86,8 +91,7 @@ const Page: NextPage<PageProps> = ({ posts, pages, current_page }) => {
       <div className="grid grid-cols-3 gap-4">
         {posts.map((post) => (
           <div key={post.slug}>
-            <h2>{post.frontMatter.title}</h2>
-            {/* PostCard コンポーネントを使う場合はここに置き換える */}
+            <PostCard key={post.slug} post={post} />
           </div>
         ))}
       </div>

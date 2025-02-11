@@ -3,13 +3,13 @@ import Link from 'next/link';
 import { Post } from '../types'; // types.ts から Post 型をインポート
 
 interface PostCardProps {
-  post: Post;
+  post: Post; // ここで型を指定
 }
 
 const PostCard: React.FC<PostCardProps> = ({ post }) => {
   return (
-    <Link href={`/posts/${post.slug}`} className="block border rounded-lg">
-      <div>
+    <Link href={`/posts/${post.slug}`} className="block">
+      <div className="border rounded-lg">
         <Image
           src={`/${post.frontMatter.image}`}
           width={1200}

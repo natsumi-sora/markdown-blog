@@ -1,5 +1,6 @@
 import Header from './Header';
 import Footer from './Footer';
+import Sidebar from './Sidebar'; // サイドバーコンポーネントをインポート
 import { ReactNode } from 'react';
 
 interface LayoutProps {
