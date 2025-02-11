@@ -9,10 +9,6 @@
   <img src="https://img.shields.io/badge/-Next.js-000000.svg?logo=next.js&style=for-the-badge">
   <img src="https://img.shields.io/badge/-TailwindCSS-000000.svg?logo=tailwindcss&style=for-the-badge">
   <img src="https://img.shields.io/badge/-React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
-  
- <!-- フロントエンド言語-->
-  <img src=<img alt="Static Badge" src="(https://img.shields.io/badge/-TypeScript-000000.style=for-the-badge)>
-
 </p>
 
 ## 目次
