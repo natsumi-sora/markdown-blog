@@ -184,6 +184,7 @@ const customCode = () => {
 
 
 const Post: NextPage<PostProps> = ({ frontMatter, content, slug, toc, relatedPosts }) => {
+  console.log("BlogPage rendered");
   return (
     <>
       <NextSeo

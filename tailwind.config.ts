@@ -5,6 +5,7 @@ const config: Config = {
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
     './posts/**/*.md', // ここを追加
+    './styles/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {},
