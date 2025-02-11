@@ -11,7 +11,7 @@
   <img src="https://img.shields.io/badge/-React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
   
  <!-- フロントエンド言語-->
-  <img src=<img alt="Static Badge" src="(https://img.shields.io/badge/-TypeScript-000000.svg?style=for-the-badge)>
+  <img src=<img alt="Static Badge" src="(https://img.shields.io/badge/-TypeScript-000000.style=for-the-badge)>
 
 </p>
 
@@ -21,7 +21,7 @@
 2. [環境](#環境)
 3. [ディレクトリ構成](#ディレクトリ構成)
 4. [開発環境構築](#開発環境構築)
-5. [トラブルシューティング](#トラブルシューティング)
+5. [動作確認](#動作確認)
 
 
 ## Markdownファイルを用いたブログ構築
@@ -32,20 +32,10 @@
 ## プロジェクトについて
 
 ・参考サイトを元にマークダウンを使用したブログを構築しています。
-・動作については開発環境のみで確認済みとなります。
+・動作については開発環境、本番環境で確認済みとなります。
 ・画像、タイトル部分については自身で作成し直しています。
 　また、文章の一部等も変更しています。
 
-<!-- プロジェクトの概要を記載 -->
-
-  <p align="left">
-    <br />
-    <!-- プロジェクト詳細にBacklogのWikiのリンク -->
-    <a href="Backlogのwikiリンク"><strong>プロジェクト詳細 »</strong></a>
-    <br />
-    <br />
-
-<p align="right">(<a href="#top">トップへ</a>)</p>
 
 ## 環境
 
@@ -53,76 +43,84 @@
 
 | 言語・フレームワーク・パッケージ | バージョン |
 | --------------------- | ---------- |
-　npm                   | 10.9.2
+|　npm                  | 10.9.2     |
 | Node.js               | 22.13.0   |
 | React                 | 19.0.0    |
 | Next.js               | 15.1.6    |
 | Prettier              | 11.0.0    |
 | Tailwind CSS          | 0.14.3    |
+
 その他のパッケージのバージョンは package.json を参照してください
 
 <p align="right">(<a href="#top">トップへ</a>)</p>
 
-## ディレクトリ構成
-.
-├── README.md
-├── components
-│   ├── Footer.tsx
-│   ├── Header.tsx
-│   ├── Layout.tsx
-│   ├── Pagination.tsx
-│   ├── PostCard.tsx
-│   └── Sidebar.tsx
-├── eslint.config.ts
-├── jsconfig.json
-├── lib
-├── next-env.d.ts
-├── next-seo.config.tsx
-├── next.config.ts
-├── node_modules
-│   └── 省略   
-├── package-lock.json
-├── package.json
-├── pages
-│   ├── _app.tsx
-│   ├── api
-│   ├── categories
-│   ├── index.tsx
-│   ├── page
-│   └── posts
-├── postcss.config.tsx
-├── posts
-│   ├── about-corrections-by-aI.md
-│   ├── break-blog.md
-│   ├── create-table-of-contents.md
-│   ├── next-js-markdown-blog.md
-│   └── solution.md
-├── public
-│   ├── aboutcorrectionsbyai.png
-│   ├── breakblog.png
-│   ├── createtableofcontents.png
-│   ├── mdblog.png
-│   ├── solution.png
-│   ├── tailwind.css
-│   └── welcomeblog.png
-├── styles
-│   └── globals.css
-├── tailwind.config.ts
-├── tsconfig.json
-├── types
-│   ├── rehype-react.d.ts
-│   └── remark-prism.d.ts
-└── types.ts
+### ディレクトリ構成
+|ディレクトリ構成　　　　　　|
+| --------------------- |
+|   .
+|   ├── README.md
+|   ├── components
+|   │   ├── Footer.tsx
+|   │   ├── Header.tsx
+|   │   ├── Layout.tsx
+|   │   ├── Pagination.tsx
+|   │   ├── PostCard.tsx
+|   │   └── Sidebar.tsx
+|   ├── eslint.config.ts
+|   ├── jsconfig.json
+|   ├── lib
+|   │   └── posts.ts
+|   ├── next-env.d.ts
+|   ├── next-seo.config.tsx
+|   ├── next.config.ts
+|   ├── node_modules/
+|   │ 
+|   ├── package-lock.json
+|   ├── package.json
+|   ├── pages
+|   │   ├── _app.tsx
+|   │   ├── api
+|   │   ├── categories
+|   │   ├── index.tsx
+|   │   ├── page
+|   │   └── posts
+|   ├── postcss.config.tsx
+|   ├── posts
+|   │   ├── about-corrections-by-aI.md
+|   │   ├── break-blog.md
+|   │   ├── comments
+|   │   ├── create-table-of-contents.md
+|   │   ├── next-js-markdown-blog.md
+|   │   └── solution.md
+|   ├── public
+|   │   ├── aboutcorrectionsbyai.png
+|   │   ├── breakblog.png
+|   │   ├── createtableofcontents.png
+|   │   ├── mdblog.png
+|   │   ├── solution.png
+|   │   ├── tailwind.css
+|   │   └── welcomeblog.png
+|   ├── styles
+|   │   └── globals.css
+|   ├── tailwind.config.ts
+|   ├── tsconfig.json
+|   ├── types
+|   │   ├── rehype-react.d.ts
+|   │   └── remark-prism.d.ts
+|   └── types.ts
+| --------------------- |
 
 <p align="right">(<a href="#top">トップへ</a>)</p>
 
 
-### 実行までのコマンド
+## 実行までのコマンド
 
-・ VSCordのダウンロード
+◯開発環境の場合
+ 1 VSCordのダウンロード
 　　https://code.visualstudio.com/download
 
-　・ダウンロードが完了したら拡張機能4つを追加
+　2 ダウンロードが完了したら拡張機能4つを追加
+
 　　```
 　　Japanese Language Pack for Visual Studio Code
 　　Live Server
@@ -130,17 +128,21 @@
 　　Tailwind CSS IntelliSense
 　　```
 
-・GitHubの以下よりリポジトリをクローン
+3 GitHubの以下よりリポジトリをクローン
 　https://github.com/natsumi-sora/markdown-blog.git
 
 ・ターミナルで　npm run devを実行
 　http://localhost:3000/にアクセスする
 
-
 ### 動作確認
 
+◯開発環境
 ターミナルで　npm run devを実行
 http://localhost:3000/
+にアクセスできたら成功
+
+◯本番環境
+https://markdown-blog-gamma-puce.vercel.app/
 にアクセスできたら成功
 
 記事は全部で5つあり、ページ1〜3までの記事のアクセス、
