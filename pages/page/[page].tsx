@@ -88,7 +88,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 const Page: NextPage<PageProps> = ({ posts, pages, current_page }) => {
   return (
     <div>
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-3 mt-10 gap-4">
         {posts.map((post) => (
           <div key={post.slug}>
             <PostCard key={post.slug} post={post} />
@@ -97,7 +97,7 @@ const Page: NextPage<PageProps> = ({ posts, pages, current_page }) => {
       </div>
 
       {/* ページネーションコンポーネント */}
-      <div className="my-4 flex justify-center space-x-2">
+      <div className="flex justify-center mt-10 space-x-4">
         {pages.map((page) => (
           <Button
             key={page}

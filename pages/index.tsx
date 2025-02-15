@@ -62,8 +62,8 @@ export const getStaticProps: GetStaticProps<HomeProps> = async () => {
 
 const Home: NextPage<HomeProps> = ({ posts, pages, current_page }) => {
   return (
-    <div className="my-8">
-      <div className="grid grid-cols-3 gap-4">
+    <div>
+      <div className="grid grid-cols-3 mt-10 gap-4">
         {posts.length === 0 ? (
           <p>投稿がありません</p>
         ) : (

@@ -71,7 +71,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 const Category: NextPage<CategoryProps> = ({ posts }) => {
   return (
     <div className="my-8">
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-3 mt-10 gap-4">
         {posts.map((post) => (
           <PostCard key={post.slug} post={post} />
         ))}
